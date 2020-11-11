@@ -13,8 +13,8 @@ namespace Ares
         std::vector<Term*> body;
 
     public:
-        Function(std::string n):Term(name){}
-        Function(std::string n,uint arity):Term(name){ body.resize(arity);}
+        Function(std::string n):Term(n){}
+        Function(std::string n,uint arity):Term(n){ body.resize(arity);}
         
         uint getArity(){
             return body.size();

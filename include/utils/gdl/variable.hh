@@ -18,8 +18,8 @@ namespace Ares
          */
         virtual Term* operator ()(Substitution &sub,bool inPlace=false){
             if( sub.contains(this) )
-                return sub[this];
-            
+                return this;
+
             return this;
         }
         
@@ -29,14 +29,6 @@ namespace Ares
         //Used for resolving hash collisions in Substitutions.
         bool operator ==(const Variable &y)const{
             return y.name == name;
-        }
-    };
-
-    //Used in Substitutions to index using a variable
-    struct VarHasher
-    {
-        std::size_t operator() (const Variable* x) const{
-            return std::hash<std::string>()(x->getName());
         }
     };
     

@@ -27,9 +27,10 @@ namespace Ares
          * is done inplace.
          * else a new term is created and that is modified using sub.
          */
-        virtual Term* operator ()(Substitution &sub,bool inPlace=false);
-        virtual bool isGround();
+        virtual Term* operator ()(Substitution &sub,bool inPlace=false) = 0;
+        virtual bool isGround() = 0;
         std::string getName() const {return name;}
+        ~Term(){}
     };  
 } // namespace Ares
 
